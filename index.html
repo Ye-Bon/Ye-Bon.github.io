@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minseok Son - Personal Website</title>
+    <!-- CSS 파일을 연결합니다 -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p>Hello, World!</p>
+    <div class="container">
+        <!-- 프로필 섹션 -->
+        <header class="profile-section">
+            <img src="profile-photo.jpg" alt="프로필 사진" class="profile-photo">
+            <div class="profile-info">
+                <h1>손민석 Minseok Son</h1>
+                <p>E-mail: ksos104@kaist.ac.kr</p>
+            </div>
+        </header>
+
+        <!-- 학력 섹션 -->
+        <section class="section">
+            <h2>Education</h2>
+            <ul>
+                <li><strong>2021.03-Present</strong> Ph.D. (School of Electrical Engineering), Korea Advanced Institute of Science and Technology (KAIST), South Korea.</li>
+                <li><strong>2019.03-2021.02</strong> M.S. (School of Computing), Korea Advanced Institute of Science and Technology (KAIST), South Korea.</li>
+                <li><strong>2014.03-2019.02</strong> B.S. (Dept. of Software and Computer Engineering), Ajou University, South Korea.</li>
+            </ul>
+        </section>
+
+        <!-- 연구 관심사 섹션 -->
+        <section class="section">
+            <h2>Research Interest</h2>
+            <ul>
+                <li>Long-tailed recognition</li>
+                <li>Efficiency optimization</li>
+                <li>Multimodal learning</li>
+            </ul>
+        </section>
+
+        <!-- 출판물 섹션 -->
+        <section class="section">
+            <h2>Publications</h2>
+            <ul>
+                <li>
+                    Son, M., Koo, I., Park, J., & Kim, C. (2025, April). Difficulty-aware Balancing Margin Loss for Long-tailed Recognition. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 39, No. 19, pp. 20522-20530).
+                </li>
+                <li>
+                    성예은, 손민석, 구인용, 임정은, 김영민, 김창익, "야생동물 종 분류를 위한 손실 값 기반 로짓 조정 기법", 대한전자공학회 하계학술대회, 롯데호텔 제주, Jun. 26-28.2024.
+                </li>
+                <li>
+                    Park, J., Son, M., Lee, S., & Kim, C. (2022, October). DAT: Domain Adaptive Transformer for Domain Adaptive Semantic Segmentation. In 2022 IEEE International Conference on...
+                </li>
+            </ul>
+        </section>
+    </div>
 </body>
 </html>
