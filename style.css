@@ -70,36 +70,102 @@ body {
     border-radius: 0;
 }
 
-/* 프로필 섹션 스타일 */
-.profile-section {
+/* Home Layout */
+.home-layout {
     display: flex;
-    align-items: center;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #eee;
+    gap: 60px;
+    align-items: flex-start;
 }
 
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-right: 20px;
-    object-fit: cover;
+.profile-left {
+    flex: 0 0 300px;
+    text-align: center;
 }
 
-.profile-info h1 {
-    margin: 0 0 10px 0;
+.profile-left .profile-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 0;
+    margin-bottom: 30px;
+}
+
+.profile-name {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.name-english {
+    display: block;
+    font-size: 20px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.profile-email {
+    font-size: 16px;
+    color: #666;
+}
+
+.profile-email a {
+    color: #2e7d32;
+    text-decoration: none;
+}
+
+.profile-email a:hover {
+    text-decoration: underline;
+}
+
+.content-right {
+    flex: 1;
+}
+
+/* Education List Styling */
+.education-list li {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: baseline;
+}
+
+.education-list .date {
+    flex: 0 0 150px;
+    font-weight: 600;
     color: #333;
 }
 
-.profile-info p {
-    margin: 5px 0;
+.education-list .degree {
+    flex: 1;
     color: #555;
+    line-height: 1.6;
+}
+
+/* Research List Styling */
+.research-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+}
+
+.research-list li:before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    color: #2e7d32;
+}
+
+/* 프로필 섹션 스타일 - 제거 */
+.profile-section {
+    display: none;
 }
 
 /* 섹션별 스타일 */
 .section {
     padding: 20px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: none;
+}
+
+.section:first-child {
+    padding-top: 0;
 }
 
 .section:last-child {
@@ -124,9 +190,10 @@ h2 {
     border-bottom: none;
     padding-bottom: 10px;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 400;
-    color: #2e7d32;
+    color: #1a5490;
+    letter-spacing: -0.5px;
 }
 
 ul {
@@ -136,6 +203,46 @@ ul {
 
 li {
     margin-bottom: 15px;
+}
+
+/* Experience Section Styling */
+h3 {
+    color: #1a5490;
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+h3:first-of-type {
+    margin-top: 0;
+}
+
+.experience-list li {
+    position: relative;
+    margin-bottom: 15px;
+    padding-right: 180px;
+}
+
+.experience-list strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.experience-list .date-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.experience-list .course-details {
+    margin: 5px 0 0 0;
+    color: #666;
+    font-size: 14px;
 }
 
 /* Projects Section Styling */
