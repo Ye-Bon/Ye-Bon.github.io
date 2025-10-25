@@ -1,10 +1,269 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yebon Kim - Personal Website</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: transparent;
+            position: absolute;
+            top: 40px;
+            right: 50px;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            padding: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 40px;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 0;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #003E74;
+        }
+
+        .nav-link.active {
+            color: #003E74;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #003E74;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 100px auto 40px;
+            padding: 40px;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            border-radius: 0;
+        }
+
+        /* Name at the top */
+        .page-title {
+            font-size: 42px;
+            font-weight: 400;
+            color: #003E74;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+
+        /* Home Layout */
+        .home-layout {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .profile-left {
+            flex: 0 0 250px;
+            text-align: center;
+        }
+
+        .profile-left .profile-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 0;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        .profile-contact {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .profile-contact a {
+            color: #003E74;
+            text-decoration: none;
+        }
+
+        .profile-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .content-right {
+            flex: 1;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 20px 0;
+            border-bottom: none;
+        }
+
+        .section:first-child {
+            padding-top: 0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-content {
+            padding: 20px 0;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        h2 {
+            border-bottom: none;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: 400;
+            color: #003E74;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            color: #003E74;
+            font-size: 22px;
+            font-weight: 400;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h3:first-of-type {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        /* Education List */
+        .education-list li {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: baseline;
+        }
+
+        .education-list .date {
+            flex: 0 0 150px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .education-list .degree {
+            flex: 1;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Introduction Text */
+        .intro-text {
+            color: #555;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+
+        /* Experience Section */
+        .experience-list li {
+            position: relative;
+            margin-bottom: 15px;
+            padding-right: 180px;
+        }
+
+        .experience-list strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .experience-list .date-right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .experience-list .course-details {
+            margin: 5px 0 0 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Projects Section */
+        .project-list li {
+            margin-bottom: 25px;
+        }
+
+        .project-list strong {
+            color: #003E74;
+            font-size: 1.1em;
+        }
+
+        .project-list p {
+            margin: 5px 0 0 0;
+            color: #555;
+            padding-left: 20px;
+        }
+
+        /* Publications Section */
+        .publication-list li {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .publication-list strong {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .publication-list em {
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -22,17 +281,27 @@
     <div class="container">
         <!-- Home Section -->
         <section id="home" class="section-content">
+            <h1 class="page-title">Yebon Kim</h1>
+            
             <div class="home-layout">
-                <!-- 왼쪽: 프로필 사진과 이름, 이메일 -->
+                <!-- Left: Profile Photo and Contact -->
                 <div class="profile-left">
-                    <img src="profile-photo.jpg" alt="프로필 사진" class="profile-photo">
-                    <h1 class="profile-name">김예본 <span class="name-english">Yebon Kim</span></h1>
-                    <p class="profile-email">E-mail: <a href="mailto:yebon.kim25@imperial.ac.uk">yebon.kim25@imperial.ac.uk</a></p>
+                    <img src="profile-photo.jpg" alt="Profile Photo" class="profile-photo">
+                    <div class="profile-contact">
+                        <strong>Email:</strong><br>
+                        <a href="mailto:yebon.kim25@imperial.ac.uk">yebon.kim25@imperial.ac.uk</a>
+                        <br><br>
+                        <strong>Address:</strong><br>
+                        Room 558, Huxley Building<br>
+                        180 Queen's Gate<br>
+                        South Kensington<br>
+                        London SW7 2AZ
+                    </div>
                 </div>
 
-                <!-- 오른쪽: Education과 Research Interest -->
+                <!-- Right: Education and Introduction -->
                 <div class="content-right">
-                    <!-- 학력 섹션 -->
+                    <!-- Education Section -->
                     <section class="section">
                         <h2>Education</h2>
                         <ul class="education-list">
@@ -49,18 +318,14 @@
                                 <span class="degree">B.S. (Dept. of Computer Engineering), Yonsei University, South Korea.</span>
                             </li>
                         </ul>
-                    </section>
 
-                    <!-- 자기소개 섹션 -->
-<section class="section">
-    <ul class="research-list">
-        <li>
-            Hi! I am a PhD candidate at Imperial College London Computing. My research primarily focuses on AI security and Trustworthy AI, specifically in the areas of adversarial attacks and defenses. I am also interested in Computer Vision models, Large Language Models (LLMs), and Generative Adversarial Networks (GANs).
-            
-            I am currently part of the Safe and Trusted AI PhD programme, a joint initiative with King's College London. Through my research, I aim to develop robust and reliable AI systems that can withstand adversarial threats while maintaining high performance in real-world applications.
-        </li>
-    </ul>
-</section>
+                        <!-- Introduction Text -->
+                        <div class="intro-text">
+                            <p>Hi! I am a PhD candidate at Imperial College London Computing. My research primarily focuses on AI security and Trustworthy AI, specifically in the areas of adversarial attacks and defenses. I am also interested in Computer Vision models, Large Language Models (LLMs), and Generative Adversarial Networks (GANs).</p>
+                            
+                            <p>I am currently part of the Safe and Trusted AI PhD programme, a joint initiative with King's College London. Through my research, I aim to develop robust and reliable AI systems that can withstand adversarial threats while maintaining high performance in real-world applications.</p>
+                        </div>
+                    </section>
                 </div>
             </div>
         </section>
@@ -137,7 +402,7 @@
                 </li>
                 <li>
                     <strong>Google Developer Student Clubs (DSC) – CORE MEMBER (2019 - 2020)</strong>
-                    <p>- Led Machine Learning Study Group and Organized several Hackathon.</p>
+                    <p>- Led Machine Learning Study Group and organized several hackathons.</p>
                 </li>
             </ul>
         </section>
@@ -180,6 +445,52 @@
         </section>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.section-content');
+            
+            // Function to hide all sections
+            function hideAllSections() {
+                sections.forEach(section => {
+                    section.style.display = 'none';
+                });
+            }
+            
+            // Function to remove active class from all nav links
+            function removeActiveClass() {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+            }
+            
+            // Add click event to each navigation link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    removeActiveClass();
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Hide all sections
+                    hideAllSections();
+                    
+                    // Show the corresponding section
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.style.display = 'block';
+                    }
+                });
+            });
+            
+            // Show home section by default
+            document.getElementById('home').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
